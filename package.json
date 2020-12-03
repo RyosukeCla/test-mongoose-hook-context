@@ -1,0 +1,25 @@
+{
+  "name": "test-mongoose-hook-context",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RyosukeCla/test-mongoose-hook-context.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RyosukeCla/test-mongoose-hook-context/issues"
+  },
+  "homepage": "https://github.com/RyosukeCla/test-mongoose-hook-context#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-http-context": "^1.2.4",
+    "mongoose": "^5.11.2",
+    "superagent": "^6.1.0"
+  }
+}
