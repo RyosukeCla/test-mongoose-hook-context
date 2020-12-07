@@ -27,7 +27,8 @@ async function run() {
   const userSchema = new Schema({ name: String });
 
   userSchema.pre("save", function() {
-		console.log('pre save', httpContext.get("test"));
+    console.log('pre save', httpContext.get("test"));
+    console.log('this.modelName', this.modelName, this.baseModelName, this.model.modelName)
   });
   userSchema.post("save", function(doc) {
 		console.log('post save', httpContext.get("test"), doc);
@@ -59,6 +60,7 @@ async function run() {
   });
   
   userSchema.pre("findOneAndUpdate", function() {
+    console.log(this.model.modelName);
     console.log('queries', this.getFilter(), this.getQuery(), this.getUpdate());
 		console.log('pre updateOne', httpContext.get("test"));
   });
@@ -123,10 +125,10 @@ async function run() {
   // await superagent.get("http://localhost:3003/1");
   // await superagent.get("http://localhost:3003/1.1");
   // await superagent.get("http://localhost:3003/1.2");
-  // await superagent.get("http://localhost:3003/2");
+  await superagent.get("http://localhost:3003/2");
   // await superagent.get("http://localhost:3003/3");
   // await superagent.get("http://localhost:3003/4");
-  await superagent.get("http://localhost:3003/5");
+  // await superagent.get("http://localhost:3003/5");
 
 	console.log("done");
 	process.exit(0);
